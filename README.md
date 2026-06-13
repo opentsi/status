@@ -1,2 +1,1 @@
-# status
-Open Time Series Status Dashboard
+# Open Time Series Status Dashboard
