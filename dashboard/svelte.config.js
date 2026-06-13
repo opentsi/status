@@ -9,6 +9,9 @@ export default {
       assets: 'build',
       fallback: 'index.html',
       precompress: false
-    })
+    }),
+    paths: {
+      base: process.env.BASE_PATH ?? ''
+    }
   }
 };

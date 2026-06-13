@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { base } from "$app/paths";
     import type { Dataset, DatasetMeta, RunResult } from "$lib/types";
     import { fetchDatasets, fetchMeta, fetchRuns, fetchRepoStats, type RepoStats } from "$lib/github";
     import { timeAgo, splitName, seededSparkline } from "$lib/utils";
@@ -10,6 +11,7 @@
     let meta = $state<Record<string, DatasetMeta>>({});
     let runs = $state<Record<string, RunResult[]>>({});
     let repoStats = $state<Record<string, RepoStats>>({});
+    let fromStaticFile = $state(false);
     let loading = $state(true);
     let error = $state<string | null>(null);
     let query = $state("");
@@ -27,6 +29,24 @@
     );
 
     onMount(async () => {
+        // Try the pre-built static file first (produced by the pipeline in CI).
+        try {
+            const res = await fetch(`${base}/status.json`);
+            if (res.ok) {
+                const file = await res.json();
+                datasets = file.datasets;
+                for (const d of file.datasets) {
+                    meta[d.name] = { title: d.title, frequency: d.frequency, source_name: d.source_name, source_url: d.source_url };
+                    if (d.sparkline?.length) repoStats[d.name] = { sparkline: d.sparkline, seriesCount: d.series_count };
+                    if (d.runs?.length) runs[d.name] = d.runs;
+                }
+                fromStaticFile = true;
+                loading = false;
+                return;
+            }
+        } catch { /* fall through to live API */ }
+
+        // Local dev fallback: live GitHub API calls.
         try {
             datasets = await fetchDatasets();
         } catch (e) {
@@ -36,9 +56,9 @@
         }
     });
 
-    // Fetch metadata + GHA runs concurrently once the dataset list is ready.
+    // Live API enrichment — only fires when status.json was not available.
     $effect(() => {
-        if (datasets.length === 0) return;
+        if (fromStaticFile || datasets.length === 0) return;
         for (const dataset of datasets) {
             fetchMeta(dataset.name).then((m) => {
                 if (m) meta[dataset.name] = m;

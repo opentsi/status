@@ -1,0 +1,8 @@
+{
+  "name": "opentsi-status-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/pipeline.ts"
+  }
+}
