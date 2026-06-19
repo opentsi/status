@@ -59,15 +59,29 @@ export class GitHubProvider implements GitProvider {
   }
 
   async getSeriesInfo(datasetName: string): Promise<SeriesInfo | null> {
+    // Contents API is capped at 1000 entries — use Git Trees API instead.
     for (const branch of ['master', 'main']) {
       try {
-        const files: { name: string; download_url: string }[] = await this.api(
-          `/repos/${this.org}/${datasetName}/contents/data-raw/csv?ref=${branch}`
+        const rootTree: { tree: Array<{ path: string; sha: string }> } = await this.api(
+          `/repos/${this.org}/${datasetName}/git/trees/${branch}`
         );
-        const csvFiles = files.filter(f => f.name.endsWith('.csv'));
+        const dataRawEntry = rootTree.tree.find(e => e.path === 'data-raw');
+        if (!dataRawEntry) continue;
+
+        const dataRawTree: { tree: Array<{ path: string; sha: string }> } = await this.api(
+          `/repos/${this.org}/${datasetName}/git/trees/${dataRawEntry.sha}`
+        );
+        const csvDirEntry = dataRawTree.tree.find(e => e.path === 'csv');
+        if (!csvDirEntry) continue;
+
+        const csvTree: { tree: Array<{ path: string; sha: string }> } = await this.api(
+          `/repos/${this.org}/${datasetName}/git/trees/${csvDirEntry.sha}`
+        );
+        const csvFiles = csvTree.tree.filter(e => e.path.endsWith('.csv'));
         if (csvFiles.length === 0) continue;
-        const csvText = await (await fetch(csvFiles[0].download_url)).text();
-        return { count: csvFiles.length, sparkline: parseCsvSparkline(csvText) };
+
+        const csvText = await this.raw(datasetName, `data-raw/csv/${csvFiles[0].path}`);
+        return { count: csvFiles.length, sparkline: csvText ? parseCsvSparkline(csvText) : [] };
       } catch {
         continue;
       }
