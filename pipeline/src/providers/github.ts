@@ -74,9 +74,10 @@ export class GitHubProvider implements GitProvider {
         const csvDirEntry = dataRawTree.tree.find(e => e.path === 'csv');
         if (!csvDirEntry) continue;
 
-        const csvTree: { tree: Array<{ path: string; sha: string }> } = await this.api(
+        const csvTree: { tree: Array<{ path: string; sha: string }>; truncated: boolean } = await this.api(
           `/repos/${this.org}/${datasetName}/git/trees/${csvDirEntry.sha}`
         );
+        if (csvTree.truncated) throw new Error(`git tree truncated for ${datasetName}`);
         const csvFiles = csvTree.tree.filter(e => e.path.endsWith('.csv'));
         if (csvFiles.length === 0) continue;
 
