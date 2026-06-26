@@ -98,20 +98,16 @@ export class GitHubProvider implements GitProvider {
       );
       if (!res.ok) return null;
       const link = res.headers.get('Link') ?? '';
-      const lastMatch = link.match(/<[^>]*[?&]page=(\d+)[^>]*>;\s*rel="last"/);
-      let commits: Array<{ commit: { committer: { date: string }; author: { date: string } } }>;
-      if (lastMatch) {
-        const lastPage = parseInt(lastMatch[1], 10);
-        const lastRes = await fetch(
-          `https://api.github.com/repos/${this.org}/${datasetName}/commits?per_page=1&page=${lastPage}`,
-          { headers: this.headers }
-        );
+      const lastUrl = link.match(/<([^>]+)>;\s*rel="last"/)?.[1];
+      let commits: Array<{ commit: { author: { date: string }; committer: { date: string } } }>;
+      if (lastUrl) {
+        const lastRes = await fetch(lastUrl, { headers: this.headers });
         if (!lastRes.ok) return null;
         commits = await lastRes.json();
       } else {
         commits = await res.json();
       }
-      const date = commits[0]?.commit?.committer?.date ?? commits[0]?.commit?.author?.date;
+      const date = commits[0]?.commit?.author?.date ?? commits[0]?.commit?.committer?.date;
       return date ? date.slice(0, 10) : null;
     } catch {
       return null;
