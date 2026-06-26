@@ -19,10 +19,11 @@ console.log(`Found ${datasets.length} datasets — fetching details...`);
 
 const results = await Promise.all(
   datasets.map(async (dataset) => {
-    const [meta, series, runs] = await Promise.all([
+    const [meta, series, runs, firstVintage] = await Promise.all([
       provider.getMeta(dataset.name),
       provider.getSeriesInfo(dataset.name),
-      provider.getRecentRuns(dataset.name, 5)
+      provider.getRecentRuns(dataset.name, 5),
+      provider.getFirstCommitDate(dataset.name)
     ]);
 
     if (meta) process.stdout.write('.');
@@ -38,7 +39,8 @@ const results = await Promise.all(
       source_url: meta?.source_url ?? '',
       series_count: series?.count ?? null,
       sparkline: series?.sparkline ?? [],
-      runs
+      runs,
+      first_vintage: firstVintage
     };
   })
 );

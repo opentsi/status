@@ -11,6 +11,7 @@
     let meta = $state<Record<string, DatasetMeta>>({});
     let runs = $state<Record<string, RunResult[]>>({});
     let repoStats = $state<Record<string, RepoStats>>({});
+    let firstVintages = $state<Record<string, string>>({});
     let fromStaticFile = $state(false);
     let loading = $state(true);
     let error = $state<string | null>(null);
@@ -39,6 +40,7 @@
                     meta[d.name] = { title: d.title, frequency: d.frequency, source_name: d.source_name, source_url: d.source_url };
                     if (d.sparkline?.length) repoStats[d.name] = { sparkline: d.sparkline, seriesCount: d.series_count };
                     if (d.runs?.length) runs[d.name] = d.runs;
+                    if (d.first_vintage) firstVintages[d.name] = d.first_vintage;
                 }
                 fromStaticFile = true;
                 loading = false;
@@ -72,7 +74,7 @@
         }
     });
 
-    const COLS = "180px 1fr 52px 68px 140px 90px 80px";
+    const COLS = "180px 1fr 52px 68px 140px 90px 80px 80px";
     const GAP = "gap: 1rem;";
 </script>
 
@@ -152,7 +154,7 @@
             class="grid items-center px-3 py-2 border-b border-zinc-800/60"
             style="grid-template-columns: {COLS}; {GAP}"
         >
-            {#each ["Dataset", "Title", "Series", "Freq", "Example Series", "Last Commit", "Runs"] as label}
+            {#each ["Dataset", "Title", "Series", "Freq", "Example Series", "Last Commit", "First Vintage", "Runs"] as label}
                 <span class="text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap">
                     {label}
                 </span>
@@ -171,6 +173,7 @@
                     <div class="h-2.5 rounded bg-zinc-900" style="width:28px"></div>
                     <div class="h-2.5 rounded bg-zinc-900" style="width:44px"></div>
                     <div class="h-9 rounded bg-zinc-900/70"></div>
+                    <div class="h-2.5 rounded bg-zinc-900 ml-auto" style="width:48px"></div>
                     <div class="h-2.5 rounded bg-zinc-900 ml-auto" style="width:48px"></div>
                     <div class="flex items-center gap-1.5">
                         {#each Array(5) as _}
@@ -265,6 +268,15 @@
                         <span class="text-xs text-zinc-600 tabular-nums">
                             {timeAgo(dataset.pushed_at)}
                         </span>
+                    </div>
+
+                    <!-- First vintage -->
+                    <div class="text-right">
+                        {#if firstVintages[dataset.name]}
+                            <span class="text-xs text-zinc-600 tabular-nums">{firstVintages[dataset.name]}</span>
+                        {:else}
+                            <span class="text-xs text-zinc-800">—</span>
+                        {/if}
                     </div>
 
                     <!-- Last 5 GHA runs — newest left, oldest right -->

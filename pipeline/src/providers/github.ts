@@ -90,6 +90,34 @@ export class GitHubProvider implements GitProvider {
     return null;
   }
 
+  async getFirstCommitDate(datasetName: string): Promise<string | null> {
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${this.org}/${datasetName}/commits?per_page=1`,
+        { headers: this.headers }
+      );
+      if (!res.ok) return null;
+      const link = res.headers.get('Link') ?? '';
+      const lastMatch = link.match(/<[^>]*[?&]page=(\d+)[^>]*>;\s*rel="last"/);
+      let commits: Array<{ commit: { committer: { date: string }; author: { date: string } } }>;
+      if (lastMatch) {
+        const lastPage = parseInt(lastMatch[1], 10);
+        const lastRes = await fetch(
+          `https://api.github.com/repos/${this.org}/${datasetName}/commits?per_page=1&page=${lastPage}`,
+          { headers: this.headers }
+        );
+        if (!lastRes.ok) return null;
+        commits = await lastRes.json();
+      } else {
+        commits = await res.json();
+      }
+      const date = commits[0]?.commit?.committer?.date ?? commits[0]?.commit?.author?.date;
+      return date ? date.slice(0, 10) : null;
+    } catch {
+      return null;
+    }
+  }
+
   async getRecentRuns(datasetName: string, n: number): Promise<RunResult[]> {
     try {
       const data = await this.api(
