@@ -2,7 +2,13 @@
     import { onMount } from "svelte";
     import { base } from "$app/paths";
     import type { Dataset, DatasetMeta, RunResult } from "$lib/types";
-    import { fetchDatasets, fetchMeta, fetchRuns, fetchRepoStats, type RepoStats } from "$lib/github";
+    import {
+        fetchDatasets,
+        fetchMeta,
+        fetchRuns,
+        fetchRepoStats,
+        type RepoStats,
+    } from "$lib/github";
     import { timeAgo, splitName, seededSparkline } from "$lib/utils";
     import Sparkline from "$lib/components/Sparkline.svelte";
     import RunDot from "$lib/components/RunDot.svelte";
@@ -37,16 +43,28 @@
                 const file = await res.json();
                 datasets = file.datasets;
                 for (const d of file.datasets) {
-                    meta[d.name] = { title: d.title, frequency: d.frequency, source_name: d.source_name, source_url: d.source_url };
-                    if (d.sparkline?.length) repoStats[d.name] = { sparkline: d.sparkline, seriesCount: d.series_count };
+                    meta[d.name] = {
+                        title: d.title,
+                        frequency: d.frequency,
+                        source_name: d.source_name,
+                        source_url: d.source_url,
+                    };
+                    if (d.sparkline?.length)
+                        repoStats[d.name] = {
+                            sparkline: d.sparkline,
+                            seriesCount: d.series_count,
+                        };
                     if (d.runs?.length) runs[d.name] = d.runs;
-                    if (d.first_vintage) firstVintages[d.name] = d.first_vintage;
+                    if (d.first_vintage)
+                        firstVintages[d.name] = d.first_vintage;
                 }
                 fromStaticFile = true;
                 loading = false;
                 return;
             }
-        } catch { /* fall through to live API */ }
+        } catch {
+            /* fall through to live API */
+        }
 
         // Local dev fallback: live GitHub API calls.
         try {
@@ -74,7 +92,7 @@
         }
     });
 
-    const COLS = "180px 1fr 52px 68px 140px 90px 80px 80px";
+    const COLS = "180px 1fr 90px 52px 68px 140px 80px 80px";
     const GAP = "gap: 1rem;";
 </script>
 
@@ -114,13 +132,16 @@
             </div>
             <div class="shrink-0 text-right">
                 {#if loading}
-                    <div class="h-8 w-16 bg-zinc-800 rounded animate-pulse"></div>
+                    <div
+                        class="h-8 w-16 bg-zinc-800 rounded animate-pulse"
+                    ></div>
                 {:else if !error}
                     <p class="text-3xl font-bold tabular-nums text-zinc-100">
                         {filtered.length}
                     </p>
                     <p class="text-xs text-zinc-600 mt-0.5">
-                        {#if query}{filtered.length} of {datasets.length}{:else}{datasets.length} total{/if}
+                        {#if query}{filtered.length} of {datasets.length}{:else}{datasets.length}
+                            total{/if}
                     </p>
                 {/if}
             </div>
@@ -136,7 +157,9 @@
                     stroke-width="2"
                     viewBox="0 0 24 24"
                 >
-                    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+                    <circle cx="11" cy="11" r="8" /><path
+                        d="m21 21-4.35-4.35"
+                    />
                 </svg>
                 <input
                     bind:value={query}
@@ -154,8 +177,10 @@
             class="grid items-center px-3 py-2 border-b border-zinc-800/60"
             style="grid-template-columns: {COLS}; {GAP}"
         >
-            {#each ["Dataset", "Title", "Series", "Freq", "Example Series", "Last Commit", "First Vintage", "Runs"] as label}
-                <span class="text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap">
+            {#each ["Dataset", "Title", "First Vintage", "Series", "Freq", "Example Series", "Last Commit", "Runs"] as label}
+                <span
+                    class="text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap"
+                >
                     {label}
                 </span>
             {/each}
@@ -168,32 +193,49 @@
                     class="grid items-center px-3 py-4 border-b border-zinc-800/30 animate-pulse"
                     style="grid-template-columns: {COLS}; {GAP}"
                 >
-                    <div class="h-3.5 rounded bg-zinc-800" style="width:{70 + ((i * 13) % 25)}%"></div>
-                    <div class="h-2.5 rounded bg-zinc-900" style="width:{50 + ((i * 17) % 40)}%"></div>
-                    <div class="h-2.5 rounded bg-zinc-900" style="width:28px"></div>
-                    <div class="h-2.5 rounded bg-zinc-900" style="width:44px"></div>
+                    <div
+                        class="h-3.5 rounded bg-zinc-800"
+                        style="width:{70 + ((i * 13) % 25)}%"
+                    ></div>
+                    <div
+                        class="h-2.5 rounded bg-zinc-900"
+                        style="width:{50 + ((i * 17) % 40)}%"
+                    ></div>
+                    <div
+                        class="h-2.5 rounded bg-zinc-900"
+                        style="width:28px"
+                    ></div>
+                    <div
+                        class="h-2.5 rounded bg-zinc-900"
+                        style="width:44px"
+                    ></div>
                     <div class="h-9 rounded bg-zinc-900/70"></div>
-                    <div class="h-2.5 rounded bg-zinc-900 ml-auto" style="width:48px"></div>
-                    <div class="h-2.5 rounded bg-zinc-900 ml-auto" style="width:48px"></div>
+                    <div
+                        class="h-2.5 rounded bg-zinc-900 ml-auto"
+                        style="width:48px"
+                    ></div>
+                    <div
+                        class="h-2.5 rounded bg-zinc-900 ml-auto"
+                        style="width:48px"
+                    ></div>
                     <div class="flex items-center gap-1.5">
                         {#each Array(5) as _}
-                            <span class="w-2.5 h-2.5 rounded-full bg-zinc-800 shrink-0"></span>
+                            <span
+                                class="w-2.5 h-2.5 rounded-full bg-zinc-800 shrink-0"
+                            ></span>
                         {/each}
                     </div>
                 </div>
             {/each}
-
         {:else if error}
             <div class="py-24 text-center">
                 <p class="text-zinc-600 text-sm">{error}</p>
             </div>
-
         {:else if filtered.length === 0}
             <div class="py-24 text-center space-y-1">
                 <p class="text-zinc-500 text-sm">No datasets match</p>
                 <p class="text-zinc-400 font-mono text-sm">"{query}"</p>
             </div>
-
         {:else}
             {#each filtered as dataset (dataset.name)}
                 {@const [prefix, key] = splitName(dataset.name)}
@@ -201,7 +243,8 @@
                     ? repoStats[dataset.name].sparkline
                     : seededSparkline(dataset.name)}
                 {@const seriesCount = repoStats[dataset.name]?.seriesCount}
-                {@const title = meta[dataset.name]?.title || dataset.description}
+                {@const title =
+                    meta[dataset.name]?.title || dataset.description}
                 {@const frequency = meta[dataset.name]?.frequency}
                 <div
                     class="grid items-center px-3 py-4 border-b border-zinc-800/30 rounded
@@ -218,7 +261,8 @@
                                    hover:text-white transition-colors"
                         >
                             <span class="text-zinc-600">{prefix}</span><span
-                                class="text-zinc-200 font-medium">{key}</span>
+                                class="text-zinc-200 font-medium">{key}</span
+                            >
                         </a>
                     </div>
 
@@ -229,7 +273,7 @@
                                 href={dataset.html_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title={title}
+                                {title}
                                 class="text-xs text-zinc-500 leading-snug truncate block no-underline
                                        hover:text-zinc-300 transition-colors"
                             >
@@ -240,10 +284,23 @@
                         {/if}
                     </div>
 
+                    <!-- First vintage -->
+                    <div>
+                        {#if firstVintages[dataset.name]}
+                            <span class="text-xs text-zinc-600 tabular-nums"
+                                >{firstVintages[dataset.name]}</span
+                            >
+                        {:else}
+                            <span class="text-xs text-zinc-800">—</span>
+                        {/if}
+                    </div>
+
                     <!-- Series count -->
                     <div>
                         {#if seriesCount != null}
-                            <span class="text-xs text-zinc-500 tabular-nums">{seriesCount}</span>
+                            <span class="text-xs text-zinc-500 tabular-nums"
+                                >{seriesCount}</span
+                            >
                         {:else}
                             <span class="text-xs text-zinc-700">—</span>
                         {/if}
@@ -252,7 +309,9 @@
                     <!-- Frequency -->
                     <div>
                         {#if frequency}
-                            <span class="text-xs text-zinc-500">{frequency}</span>
+                            <span class="text-xs text-zinc-500"
+                                >{frequency}</span
+                            >
                         {:else}
                             <span class="text-xs text-zinc-700">—</span>
                         {/if}
@@ -268,15 +327,6 @@
                         <span class="text-xs text-zinc-600 tabular-nums">
                             {timeAgo(dataset.pushed_at)}
                         </span>
-                    </div>
-
-                    <!-- First vintage -->
-                    <div class="text-right">
-                        {#if firstVintages[dataset.name]}
-                            <span class="text-xs text-zinc-600 tabular-nums">{firstVintages[dataset.name]}</span>
-                        {:else}
-                            <span class="text-xs text-zinc-800">—</span>
-                        {/if}
                     </div>
 
                     <!-- Last 5 GHA runs — newest left, oldest right -->
