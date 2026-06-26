@@ -92,19 +92,24 @@ export class GitHubProvider implements GitProvider {
 
   async getFirstCommitDate(datasetName: string): Promise<string | null> {
     try {
-      let url: string | null =
-        `https://api.github.com/repos/${this.org}/${datasetName}/commits?per_page=100`;
-      let lastBatch: Array<{ commit: { author: { date: string }; committer: { date: string } } }> = [];
-      while (url) {
-        const res = await fetch(url, { headers: this.headers });
-        if (!res.ok) return null;
-        lastBatch = await res.json();
-        const link = res.headers.get('Link') ?? '';
-        url = link.match(/<([^>]+)>;\s*rel="next"/)?.[1] ?? null;
+      let earliest: string | null = null;
+      for (const branch of ['master', 'main']) {
+        let url: string | null =
+          `https://api.github.com/repos/${this.org}/${datasetName}/commits?sha=${branch}&per_page=100`;
+        while (url) {
+          const res = await fetch(url, { headers: this.headers });
+          if (!res.ok) break;
+          const batch: Array<{ commit: { author: { date: string }; committer: { date: string } } }> =
+            await res.json();
+          for (const c of batch) {
+            const d = c.commit.author?.date ?? c.commit.committer?.date;
+            if (d && (!earliest || d < earliest)) earliest = d;
+          }
+          const link = res.headers.get('Link') ?? '';
+          url = link.match(/<([^>]+)>;\s*rel="next"/)?.[1] ?? null;
+        }
       }
-      const oldest = lastBatch[lastBatch.length - 1];
-      const date = oldest?.commit?.author?.date ?? oldest?.commit?.committer?.date;
-      return date ? date.slice(0, 10) : null;
+      return earliest ? earliest.slice(0, 10) : null;
     } catch {
       return null;
     }
