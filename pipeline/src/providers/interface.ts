@@ -27,6 +27,7 @@ export interface GitProvider {
   getSeriesInfo(datasetName: string): Promise<SeriesInfo | null>;
   getRecentRuns(datasetName: string, n: number): Promise<RunResult[]>;
   getFirstCommitDate(datasetName: string): Promise<string | null>;
+  getShieldStatus(datasetName: string): Promise<string | null>;
 }
 
 // Shape of the generated status.json
@@ -39,6 +40,7 @@ export interface DatasetStatus extends DatasetRef {
   sparkline: number[];
   runs: RunResult[];
   first_vintage: string | null;
+  dataset_status: string | null;
 }
 
 export interface StatusFile {

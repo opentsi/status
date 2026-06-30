@@ -83,6 +83,22 @@ function parseCsvSparkline(csv: string): number[] {
     .filter(v => !isNaN(v));
 }
 
+export async function fetchShieldStatus(repoName: string): Promise<string | null> {
+  for (const branch of ['master', 'main']) {
+    try {
+      const res = await fetch(
+        `https://raw.githubusercontent.com/opentsi/${repoName}/${branch}/data-raw/shield.json`
+      );
+      if (!res.ok) continue;
+      const shield = await res.json();
+      return typeof shield.message === 'string' ? shield.message : null;
+    } catch {
+      continue;
+    }
+  }
+  return null;
+}
+
 export async function fetchMeta(repoName: string): Promise<DatasetMeta | null> {
   for (const branch of ['master', 'main']) {
     try {

@@ -1,0 +1,1203 @@
+{
+  "generated_at": "2026-06-30T12:28:58.889Z",
+  "datasets": [
+    {
+      "name": "ch.fso.bapau",
+      "html_url": "https://github.com/opentsi/ch.fso.bapau",
+      "pushed_at": "2026-06-30T11:03:05Z",
+      "title": "Secondary Sector Production, Orders and Turnover Statistics - quarterly series",
+      "frequency": "Quarterly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 774,
+      "sparkline": [
+        110.175146303415,
+        102.059566573061,
+        103.005750629308,
+        78.9624598288972,
+        104.315998455598,
+        101.836245845509,
+        102.077451318297,
+        79.2595381788563,
+        98.0897623739762,
+        96.2394737023722,
+        100.905113995073,
+        75.8493435554455,
+        101.74311507662,
+        97.1320182067503,
+        98.8613805745379,
+        75.6612288408241,
+        101.540828166919,
+        89.4915650613117,
+        92.6152543334184,
+        71.8226611206738,
+        94.6230855836597,
+        80.8371805219994,
+        83.8506931529208,
+        69.0919602954839
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-05-15T12:00:00Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-05-13T08:55:55Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-05-13T08:52:03Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-05-13T08:44:08Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-05-13T08:37:48Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.besta",
+      "html_url": "https://github.com/opentsi/ch.fso.besta",
+      "pushed_at": "2026-06-30T09:42:59Z",
+      "title": "Jobs by economic division, employment rate and sex",
+      "frequency": "Quarterly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 4320,
+      "sparkline": [
+        44168.6103,
+        43823.4433,
+        43766.2897,
+        43759.7355,
+        42569.2602,
+        43183.3812,
+        43906.767,
+        44071.7615,
+        43565.5882,
+        43678.081,
+        44297.7054,
+        44385.0129,
+        44543.0112,
+        44266.6012,
+        44893.0293,
+        44655.4892,
+        44305.6081,
+        44698.5693,
+        44673.6865,
+        44173.4992,
+        44124.9231,
+        44077.0965,
+        43605.5326,
+        44415.1778
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T16:04:38Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T16:00:48Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:56:07Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:45:51Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:06:59Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.besta.sex",
+      "html_url": "https://github.com/opentsi/ch.fso.besta.sex",
+      "pushed_at": "2026-06-30T11:12:08Z",
+      "title": "Jobs by major region, economic sector, employment rate and sex",
+      "frequency": "Quarterly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 1008,
+      "sparkline": [
+        771036.7368,
+        772167.9492,
+        759949.5462,
+        754456.002,
+        760721.3888,
+        771521.6661,
+        764094.2783,
+        765869.414,
+        770539.8449,
+        781798.888,
+        777320.4292,
+        777118.9195,
+        782663.0179,
+        787397.6073,
+        779656.2131,
+        776166.4438,
+        782245.2799,
+        786558.7868,
+        777587.4116,
+        776398.8194,
+        774094.098,
+        778407.5179,
+        776489.0958,
+        774658.3996
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T14:58:36Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T13:57:01Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T13:36:07Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T13:28:12Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T13:23:02Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.besta.vacancies",
+      "html_url": "https://github.com/opentsi/ch.fso.besta.vacancies",
+      "pushed_at": "2026-06-30T11:28:14Z",
+      "title": "Job vacancies by economic divisions (selection)",
+      "frequency": "Quarterly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 180,
+      "sparkline": [
+        8717.9044,
+        10024.2514,
+        9905.8969,
+        11967.1356,
+        14176.8584,
+        16208.2707,
+        16987.1139,
+        19339.8003,
+        20157.7803,
+        20105.4258,
+        19699.9193,
+        20931.3105,
+        22351.214,
+        18316.4241,
+        16660.3485,
+        15799.265,
+        14775.3278,
+        14740.8054,
+        13003.8871,
+        13494.0583,
+        12744.3066,
+        12361.1508,
+        10979.6864,
+        12882.141
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T14:50:28Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T14:43:25Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:37:39Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-05T12:31:43Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-01T15:50:50Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.cpi.2025",
+      "html_url": "https://github.com/opentsi/ch.fso.cpi.2025",
+      "pushed_at": "2026-06-30T11:31:35Z",
+      "title": "Consumer Price Index 2025",
+      "frequency": "Monthly",
+      "source_name": "Federal Statistical Office (FSO)",
+      "source_url": "https://www.bfs.admin.ch/bfs/en/home/statistics/prices/consumer-price-index.html",
+      "series_count": 1440,
+      "sparkline": [
+        98.0369,
+        98.4982,
+        98.8665,
+        98.9732,
+        98.5083,
+        97.9369,
+        97.7986,
+        98.7607,
+        98.8133,
+        98.5428,
+        99.235,
+        99.3727,
+        99.7542,
+        99.8113,
+        99.7773,
+        99.7281,
+        99.7241,
+        99.6415,
+        100,
+        100.6007,
+        101.2507,
+        100.8932,
+        100.4734,
+        100.0872
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T15:23:50Z"
+        }
+      ],
+      "first_vintage": "2026-02-19",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.es.noga",
+      "html_url": "https://github.com/opentsi/ch.fso.es.noga",
+      "pushed_at": "2026-06-30T12:23:34Z",
+      "title": "Employment statistics by economic sector",
+      "frequency": "Quarterly",
+      "source_name": "Federal Statistical Office FSO",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/ets.html",
+      "series_count": 66,
+      "sparkline": [
+        52569.6331324965,
+        50079.4411207908,
+        40870.0009988825,
+        41076.9120997988,
+        47129.7518868385,
+        42825.8183143068,
+        33131.7215030424,
+        32912.6478100909,
+        39567.3199519852,
+        37446.1305805654,
+        37551.4245972696,
+        34411.5379834319,
+        41629.8394010522,
+        41987.3905575032,
+        33115.9666529134,
+        38830.5720293518,
+        43032.0420794953,
+        41168.567992192,
+        37658.8126031484,
+        34918.145288134,
+        38071.0065574206,
+        38921.6710399291,
+        38822.1157661096,
+        34761.0145114365
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-30T08:53:24Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-29T10:18:26Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-28T08:38:23Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-27T08:24:16Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-26T08:47:35Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.es.rs",
+      "html_url": "https://github.com/opentsi/ch.fso.es.rs",
+      "pushed_at": "2026-06-30T11:39:12Z",
+      "title": "Employment statistics by residence status",
+      "frequency": "Quarterly",
+      "source_name": "Federal Statistical Office FSO",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/ets.html",
+      "series_count": 180,
+      "sparkline": [
+        173012,
+        176263,
+        168782,
+        180681,
+        170645,
+        175281,
+        186460,
+        180233,
+        182638,
+        192290,
+        183778,
+        179548,
+        175277,
+        170662,
+        177528,
+        171230,
+        189914,
+        192339,
+        181764,
+        193801,
+        193023,
+        193528,
+        186552,
+        186907
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-30T08:57:53Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-29T10:24:41Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-28T08:41:18Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-27T08:26:58Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-26T08:51:29Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.hesta",
+      "html_url": "https://github.com/opentsi/ch.fso.hesta",
+      "pushed_at": "2026-06-30T11:54:22Z",
+      "title": "Hotel sector: arrivals and overnight stays of open establishments by Year, Month, Canton, Visitors' country of residence and Indicator",
+      "frequency": "Monthly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 4212,
+      "sparkline": [
+        353344,
+        396049,
+        392385,
+        384233,
+        365062,
+        331295,
+        292331,
+        326447,
+        257517,
+        228063,
+        287080,
+        309605,
+        375059,
+        387553,
+        391718,
+        409411,
+        373664,
+        348575,
+        302187,
+        344705,
+        263973,
+        239224,
+        286310,
+        299296
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T16:16:19Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T16:12:15Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:39:27Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-05T12:32:12Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-01T15:51:39Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "ch.fso.indpau",
+      "html_url": "https://github.com/opentsi/ch.fso.indpau",
+      "pushed_at": "2026-06-30T12:27:59Z",
+      "title": "Secondary Sector Production, Orders and Turnover Statistics - monthly series",
+      "frequency": "Monthly",
+      "source_name": "FSO",
+      "source_url": "https://www.fso.admin.ch",
+      "series_count": 630,
+      "sparkline": [
+        57.0328718276818,
+        82.72050918398,
+        87.3544243355459,
+        102.491879696872,
+        95.3842458671748,
+        104.898275943824,
+        109.618881399748,
+        83.7158410500961,
+        100.142114637782,
+        114.351857722012,
+        97.9290243574385,
+        65.7147133203693,
+        57.9139391071758,
+        86.1085536134543,
+        91.4884904634262,
+        109.894359025436,
+        105.876060668152,
+        109.288806899439,
+        121.295989144558,
+        90.1122874243852,
+        117.332181543787,
+        116.472093681333,
+        97.7890989544871,
+        64.032636776371
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-19T10:46:22Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:46:47Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-05T12:38:59Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-01T15:57:29Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-05-15T15:17:30Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "inactive"
+    },
+    {
+      "name": "ch.fso.ipi",
+      "html_url": "https://github.com/opentsi/ch.fso.ipi",
+      "pushed_at": "2026-06-18T16:00:43Z",
+      "title": "Import Price Index",
+      "frequency": "Monthly",
+      "source_name": "FSO",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.8646711.html",
+      "series_count": 18,
+      "sparkline": [
+        141.4816,
+        141.6255,
+        140.8689,
+        140.2956,
+        139.6775,
+        138.7455,
+        138.6298,
+        138.92,
+        139.2676,
+        139.2427,
+        139.2645,
+        137.7388,
+        137.4869,
+        137.6419,
+        137.1329,
+        136.4837,
+        135.9148,
+        135.3329,
+        134.6867,
+        134.0419,
+        134.3243,
+        134.7447,
+        137.8731,
+        137.4012
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T15:59:06Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:56:51Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:51:52Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T15:47:25Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:33:10Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.fso.pop",
+      "html_url": "https://github.com/opentsi/ch.fso.pop",
+      "pushed_at": "2026-06-20T16:27:06Z",
+      "title": "Demographic balance of the permanent resident population, 1861-2018",
+      "frequency": "Yearly",
+      "source_name": "FSO (BEVNAT, ESPOP, STATPOP)",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/stand-entwicklung/bevoelkerung.assetdetail.9486043.html",
+      "series_count": 1,
+      "sparkline": [
+        7197638,
+        7255653,
+        7313853,
+        7364148,
+        7415102,
+        7459128,
+        7508739,
+        7593494,
+        7701856,
+        7785806,
+        7870134,
+        7954662,
+        8039060,
+        8139631,
+        8237666,
+        8327126,
+        8419550,
+        8484130,
+        8544527,
+        8606033,
+        8670300,
+        8738791,
+        8815385,
+        8962258
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-20T16:18:32Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.fso.ppi",
+      "html_url": "https://github.com/opentsi/ch.fso.ppi",
+      "pushed_at": "2026-06-20T16:52:55Z",
+      "title": "Producer Price Index",
+      "frequency": "Monthly",
+      "source_name": "FSO",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/tabellen.assetdetail.8646691.html",
+      "series_count": 18,
+      "sparkline": [
+        197.6854,
+        197.6747,
+        198.7943,
+        198.7919,
+        198.2073,
+        197.1377,
+        197.2358,
+        197.3771,
+        197.9922,
+        198.2509,
+        198.6194,
+        198.2511,
+        198.2664,
+        197.669,
+        196.1587,
+        196.0841,
+        195.7178,
+        194.7562,
+        194.6356,
+        194.3416,
+        193.3841,
+        193.5432,
+        193.941,
+        193.2454
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-20T16:53:23Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.fso.unemp",
+      "html_url": "https://github.com/opentsi/ch.fso.unemp",
+      "pushed_at": "2026-06-20T17:11:55Z",
+      "title": "Unemployed persons according to ILO by sex, nationality and age groups, gross and seasonally adjusted values",
+      "frequency": "Quarterly",
+      "source_name": "FSO",
+      "source_url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erwerbslosigkeit-unterbeschaeftigung-offene-stellen/erwerbslose-ilo.assetdetail.7206146.html",
+      "series_count": 84,
+      "sparkline": [
+        8779.96708121242,
+        8104.02694597808,
+        10790.9759728095,
+        20133.6849909217,
+        24880.8213584164,
+        23783.2336506619,
+        16843.2221815843,
+        14835.1729717294,
+        15941.5948466863,
+        18413.353199238,
+        18581.7207278329,
+        17355.1460729291,
+        14066.8591781724,
+        12800.3138510652,
+        13672.8469707624,
+        17651.3854442738,
+        20076.3996065613,
+        19942.7149491649,
+        16952.3696269702,
+        16004.0293730836,
+        15931.1809999462,
+        15076.4457079268,
+        15124.6261650473,
+        14667.1381270259
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-20T17:13:11Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.kof.barometer",
+      "html_url": "https://github.com/opentsi/ch.kof.barometer",
+      "pushed_at": "2026-06-18T13:56:21Z",
+      "title": "KOF Barometer",
+      "frequency": "Monthly",
+      "source_name": "",
+      "source_url": "https://",
+      "series_count": 1,
+      "sparkline": [
+        104.417872526291,
+        101.968095766084,
+        105.278800061656,
+        103.709032971396,
+        100.296076294725,
+        98.4559697698155,
+        99.7118597987187,
+        102.814490045307,
+        102.833203553676,
+        100.892548282871,
+        95.3638325964088,
+        97.6438188719146,
+        95.4763393463236,
+        100.845335864091,
+        97.3303552203385,
+        97.875944157849,
+        101.389186686031,
+        101.552930959558,
+        103.655437537443,
+        103.35014037858,
+        103.784640446732,
+        95.6514799966297,
+        97.7835029886142,
+        97.9604212588505
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-18T13:55:24Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T13:39:51Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T12:59:28Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-18T12:56:13Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:48:13Z"
+        }
+      ],
+      "first_vintage": "2014-04-10",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.kof.globalbaro",
+      "html_url": "https://github.com/opentsi/ch.kof.globalbaro",
+      "pushed_at": "2026-06-19T10:39:20Z",
+      "title": "KOF Global Barometer",
+      "frequency": "Monthly",
+      "source_name": "KOF Swiss Economic Institute",
+      "source_url": "https://kof.ethz.ch/en/forecasts-and-indicators/indicators/kof-globalbaro.html",
+      "series_count": 2,
+      "sparkline": [
+        95.9995705222544,
+        95.7932521805545,
+        96.5180185078915,
+        95.7584692737579,
+        98.3942514295879,
+        99.0881669355887,
+        98.2659371888512,
+        99.2337526205684,
+        99.675429351684,
+        97.8083012934341,
+        94.5148820327319,
+        96.0428955043299,
+        97.0825364516256,
+        99.1182102213696,
+        99.3639007697195,
+        98.6137843460634,
+        99.1895156600109,
+        100.069230551496,
+        101.340357290368,
+        101.80337759712,
+        101.592078758007,
+        101.299664818867,
+        103.115184357657,
+        103.158864007317
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-19T10:38:20Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-19T10:35:12Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-15T15:36:52Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-05T12:31:19Z"
+        },
+        {
+          "status": "failure",
+          "date": "2026-06-01T15:49:13Z"
+        }
+      ],
+      "first_vintage": "2020-01-10",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.kof.trsm.fcst.ss",
+      "html_url": "https://github.com/opentsi/ch.kof.trsm.fcst.ss",
+      "pushed_at": "2026-06-28T13:57:44Z",
+      "title": "KOF Forecasts of Summer Season Tourism in Switzerland",
+      "frequency": "Yearly",
+      "source_name": "KOF Swiss Economic Institute",
+      "source_url": "https://kof.ethz.ch/en/forecasts-and-indicators/forecasts/kof-forecasts-of-tourism-in-switzerland.html",
+      "series_count": 12,
+      "sparkline": [
+        8845.344,
+        9243.382,
+        9586.272,
+        9864.741,
+        9409.478,
+        9528.665,
+        9156.294,
+        8838.765,
+        9037.624,
+        9040.028,
+        8958.042,
+        8885.054,
+        9492.682,
+        10003.945,
+        10245.938,
+        7452.864,
+        8827,
+        10130.929,
+        10868.6581046772,
+        11054.159590705,
+        11313.0168138731,
+        11343.5213288253,
+        10761.385258484
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-28T13:59:45Z"
+        }
+      ],
+      "first_vintage": "2005-01-01",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.kof.trsm.fcst.ty",
+      "html_url": "https://github.com/opentsi/ch.kof.trsm.fcst.ty",
+      "pushed_at": "2026-06-29T14:02:35Z",
+      "title": "KOF Forecasts of Total Year Tourism in Switzerland",
+      "frequency": "Yearly",
+      "source_name": "KOF Swiss Economic Institute",
+      "source_url": "https://kof.ethz.ch/en/forecasts-and-indicators/forecasts/kof-forecasts-of-tourism-in-switzerland.html",
+      "series_count": 12,
+      "sparkline": [
+        17780.233,
+        18256.62,
+        19137.84,
+        18258.26,
+        18243.348,
+        17526.104,
+        16676.421,
+        17011.176,
+        17084.721,
+        16968.245,
+        16537.084,
+        17366.417,
+        18348.226,
+        18736.716,
+        14214.39,
+        14698.692,
+        18291.434,
+        19866.6363405026,
+        20304.8942638032,
+        20752.9917202979,
+        20863.6582522386,
+        20267.7974113828
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T10:51:10Z"
+        }
+      ],
+      "first_vintage": "2005-01-01",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.kof.trsm.fcst.ws",
+      "html_url": "https://github.com/opentsi/ch.kof.trsm.fcst.ws",
+      "pushed_at": "2026-06-28T14:17:57Z",
+      "title": "KOF Forecasts of Winter Season Tourism in Switzerland",
+      "frequency": "Yearly",
+      "source_name": "KOF Swiss Economic Institute",
+      "source_url": "https://kof.ethz.ch/en/forecasts-and-indicators/forecasts/kof-forecasts-of-tourism-in-switzerland.html",
+      "series_count": 12,
+      "sparkline": [
+        8536.851,
+        8670.348,
+        9273.099,
+        8848.782,
+        8714.683,
+        8369.81,
+        7837.656,
+        7973.552,
+        8044.693,
+        8010.203,
+        7652.03,
+        7873.735,
+        8344.281,
+        8490.778,
+        6761.526,
+        5871.692,
+        8160.505,
+        8997.97823582539,
+        9250.73467309824,
+        9439.9749064248,
+        9520.13692341333,
+        9506.41215289878
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T11:46:42Z"
+        }
+      ],
+      "first_vintage": "2005-01-01",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.seco.con.con",
+      "html_url": "https://github.com/opentsi/ch.seco.con.con",
+      "pushed_at": "2026-06-29T15:59:06Z",
+      "title": "Consumer sentiment index",
+      "frequency": "Quarterly",
+      "source_name": "State Secretariat for Economic Affairs (SECO)",
+      "source_url": "https://www.seco.admin.ch/de/konsumentenstimmung",
+      "series_count": 39,
+      "sparkline": [
+        -89.8636807370574,
+        -96.7712111910995,
+        -96.5593130033418,
+        -92.8045186744423,
+        -44.2128951191665,
+        -22.1777622273941,
+        -25.3049430910556,
+        -27.4077123899532,
+        -54.3284708904069,
+        -62.4219925233104,
+        -51.5320981040042,
+        -53.9900879729737,
+        -37.3311431106078,
+        -69.7425372092237,
+        -50.0709037332799,
+        -42.25921299169,
+        -31.6229991912819,
+        -46.003247483748,
+        -34.1248480372537,
+        -53.3127295885584,
+        -43.4999851370094,
+        -61.1810017477489,
+        -52.6031781799591,
+        -63.2073478021639
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T15:58:08Z"
+        }
+      ],
+      "first_vintage": "2026-05-05",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.seco.css",
+      "html_url": "https://github.com/opentsi/ch.seco.css",
+      "pushed_at": "2026-06-20T17:57:41Z",
+      "title": "Consumer sentiment index",
+      "frequency": "Quarterly",
+      "source_name": "State Secretariat for Economic Affairs (SECO)",
+      "source_url": "https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/Wirtschaftslage/konsumentenstimmung/daten-ab-1972.html",
+      "series_count": 83,
+      "sparkline": [
+        24.4368600682594,
+        18.5341196293176,
+        13.4030418250951,
+        18.3673469387755,
+        9.33333333333333,
+        4.96,
+        4.32300163132137,
+        -10.4838709677419,
+        6.10328638497653,
+        -40.2373247033441,
+        -87.3511904761905,
+        -94.2587209302326,
+        -94.0468227424749,
+        -90.2920284135754,
+        -41.7004048582996,
+        -19.6652719665272,
+        -22.7924528301887,
+        -24.8952221290863,
+        -51.81598062954,
+        -59.9095022624434,
+        -49.0196078431373,
+        -51.4775977121068,
+        -34.8186528497409,
+        -67.2300469483568
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-20T17:54:35Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": null
+    },
+    {
+      "name": "ch.seco.gdp",
+      "html_url": "https://github.com/opentsi/ch.seco.gdp",
+      "pushed_at": "2026-06-30T08:50:44Z",
+      "title": "Gross domestic product (GDP)",
+      "frequency": "Quarterly",
+      "source_name": "State Secretariat for Economic Affairs (SECO)",
+      "source_url": "https://www.seco.admin.ch/seco/en/home/wirtschaftslage---wirtschaftspolitik/Wirtschaftslage/bip-quartalsschaetzungen-.html",
+      "series_count": 898,
+      "sparkline": [
+        -0.276497044288222,
+        0.210334149059323,
+        0.0151399860630406,
+        -0.0177295476317637,
+        0.106388820708556,
+        0.0660213541547025,
+        0.0126400673649311,
+        0.0137726071438563,
+        0.025638436988994,
+        0.0229122590145385,
+        -0.0277680850239501,
+        -0.0296220310402173,
+        -0.0428068668438513,
+        0.0197229130937569,
+        -0.0251190234757504,
+        -0.0372849401961251,
+        0.0184307636344992,
+        0.00207705817864829,
+        0.011554243531533,
+        0.0433293816089488,
+        -0.00550557433596623,
+        -0.0143640562191985,
+        0.00287582493940234,
+        0.0215464329104426
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T17:08:50Z"
+        }
+      ],
+      "first_vintage": "2020-09-07",
+      "dataset_status": "active"
+    },
+    {
+      "name": "us.fred.indpro",
+      "html_url": "https://github.com/opentsi/us.fred.indpro",
+      "pushed_at": "2026-06-21T18:11:29Z",
+      "title": "Industrial Production: Total Index",
+      "frequency": "Monthly",
+      "source_name": "Federal Reserve Bank of St. Louis (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/INDPRO",
+      "series_count": 1,
+      "sparkline": [
+        100.894,
+        99.9757,
+        100.4309,
+        99.8084,
+        99.4695,
+        99.2925,
+        100.3273,
+        100.0647,
+        101.0993,
+        101.0404,
+        101.1279,
+        100.9655,
+        101.4785,
+        101.894,
+        101.6247,
+        101.668,
+        101.2195,
+        101.0344,
+        101.4941,
+        101.1235,
+        101.9493,
+        101.6273,
+        102.509,
+        102.6475
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-21T18:14:07Z"
+        }
+      ],
+      "first_vintage": "1970-01-16",
+      "dataset_status": null
+    },
+    {
+      "name": "us.fred.sofr",
+      "html_url": "https://github.com/opentsi/us.fred.sofr",
+      "pushed_at": "2026-06-29T16:34:42Z",
+      "title": "SOFR Index",
+      "frequency": "Daily",
+      "source_name": "Federal Reserve Bank of St. Louis (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/SOFRINDEX",
+      "series_count": 1,
+      "sparkline": [
+        1.24483166,
+        1.24495718,
+        1.24508236,
+        1.245459,
+        1.24558528,
+        1.24571087,
+        1.24583579,
+        1.24596107,
+        1.24633797,
+        1.24646364,
+        1.24658829,
+        1.2467126,
+        1.24683727,
+        1.24721652,
+        1.24734436,
+        1.24747013,
+        1.24759592,
+        1.24809773,
+        1.24822289,
+        1.2483484,
+        1.24847393,
+        1.24860016,
+        1.24897683
+      ],
+      "runs": [
+        {
+          "status": "success",
+          "date": "2026-06-29T16:33:39Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-28T14:42:46Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-27T14:22:52Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-26T15:20:17Z"
+        },
+        {
+          "status": "success",
+          "date": "2026-06-25T15:37:10Z"
+        }
+      ],
+      "first_vintage": "2021-02-24",
+      "dataset_status": null
+    }
+  ]
+}
