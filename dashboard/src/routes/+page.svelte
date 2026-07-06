@@ -7,6 +7,7 @@
         fetchMeta,
         fetchRuns,
         fetchRepoStats,
+        fetchShieldStatus,
         type RepoStats,
     } from "$lib/github";
     import { timeAgo, splitName, seededSparkline } from "$lib/utils";
@@ -18,6 +19,7 @@
     let runs = $state<Record<string, RunResult[]>>({});
     let repoStats = $state<Record<string, RepoStats>>({});
     let firstVintages = $state<Record<string, string>>({});
+    let shieldStatuses = $state<Record<string, string | null>>({});
     let fromStaticFile = $state(false);
     let loading = $state(true);
     let error = $state<string | null>(null);
@@ -57,6 +59,8 @@
                     if (d.runs?.length) runs[d.name] = d.runs;
                     if (d.first_vintage)
                         firstVintages[d.name] = d.first_vintage;
+                    if ('dataset_status' in d)
+                        shieldStatuses[d.name] = d.dataset_status as string | null;
                 }
                 fromStaticFile = true;
                 loading = false;
@@ -89,10 +93,13 @@
             fetchRepoStats(dataset.name).then((s) => {
                 if (s) repoStats[dataset.name] = s;
             });
+            fetchShieldStatus(dataset.name).then((status) => {
+                shieldStatuses[dataset.name] = status;
+            });
         }
     });
 
-    const COLS = "180px 1fr 90px 52px 68px 140px 80px 80px";
+    const COLS = "180px 70px 1fr 90px 52px 68px 140px 80px 80px";
     const GAP = "gap: 1rem;";
 </script>
 
@@ -177,7 +184,7 @@
             class="grid items-center px-3 py-2 border-b border-zinc-800/60"
             style="grid-template-columns: {COLS}; {GAP}"
         >
-            {#each ["Dataset", "Title", "First Vintage", "Series", "Freq", "Example Series", "Last Commit", "Runs"] as label}
+            {#each ["Dataset", "Status", "Title", "First Vintage", "Series", "Freq", "Example Series", "Last Commit", "Runs"] as label}
                 <span
                     class="text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap"
                 >
@@ -197,6 +204,7 @@
                         class="h-3.5 rounded bg-zinc-800"
                         style="width:{70 + ((i * 13) % 25)}%"
                     ></div>
+                    <div class="h-2.5 rounded bg-zinc-900" style="width:44px"></div>
                     <div
                         class="h-2.5 rounded bg-zinc-900"
                         style="width:{50 + ((i * 17) % 40)}%"
@@ -264,6 +272,33 @@
                                 class="text-zinc-200 font-medium">{key}</span
                             >
                         </a>
+                    </div>
+
+                    <!-- Status -->
+                    <div>
+                        {#if dataset.name in shieldStatuses}
+                            {@const status = shieldStatuses[dataset.name]}
+                            {#if status === 'active'}
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-400">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                                    active
+                                </span>
+                            {:else if status === 'inactive'}
+                                <span class="inline-flex items-center gap-1 text-xs font-medium text-amber-500">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                                    inactive
+                                </span>
+                            {:else if status != null}
+                                <span class="inline-flex items-center gap-1 text-xs text-zinc-500">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-500 shrink-0"></span>
+                                    {status}
+                                </span>
+                            {:else}
+                                <span class="text-xs text-zinc-800">—</span>
+                            {/if}
+                        {:else}
+                            <span class="text-xs text-zinc-800">—</span>
+                        {/if}
                     </div>
 
                     <!-- Title -->

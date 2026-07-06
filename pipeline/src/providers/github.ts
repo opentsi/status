@@ -115,6 +115,17 @@ export class GitHubProvider implements GitProvider {
     }
   }
 
+  async getShieldStatus(datasetName: string): Promise<string | null> {
+    const text = await this.raw(datasetName, 'data-raw/shield.json');
+    if (!text) return null;
+    try {
+      const shield = JSON.parse(text);
+      return typeof shield.message === 'string' ? shield.message : null;
+    } catch {
+      return null;
+    }
+  }
+
   async getRecentRuns(datasetName: string, n: number): Promise<RunResult[]> {
     try {
       const data = await this.api(
